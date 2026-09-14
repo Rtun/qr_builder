@@ -1,6 +1,40 @@
 // resources/sass/app.scss
+@use 'variables' as *;
+@use 'bootstrap/scss/bootstrap';
+@import '@fortawesome/fontawesome-free/css/all.css';
+
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  background-color: #f8fafc;
+  background-color: $primary-color;
   margin: 0;
+}
+
+.main-navbar {
+  background-color: #1e293b !important;
+
+  .navbar-brand {
+    font-size: 1.25rem;
+    svg {
+      color: #818cf8;
+    }
+  }
+
+  .nav-link {
+    transition: color 0.2s ease-in-out;
+    &:hover {
+      color: #818cf8 !important;
+    }
+  }
+}
+
+.main-footer {
+  background-color: #0f172a !important;
+
+  a {
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: #ffffff !important;
+    }
+  }
 }

@@ -1,17 +1,14 @@
-<!-- resources/js/Components/App.vue -->
+<script setup>
+  import Navbar from './Navbar.vue';
+  import QrBuilder from './QrBuilder.vue';
+  import FooterApp from './FooterApp.vue';
+</script>
+
 <template>
-  <div class="qr-builder-container">
-    <h1>QR Page Builder</h1>
-    <p>¡Frontend con Vue 3, Vite y Sass funcionando correctamente!</p>
+  <div class="d-flex flex-column min-vh-100 bg-light">
+
+    <!-- Contenido Principal -->
+      <QrBuilder />
+
   </div>
 </template>
-
-<style lang="scss" scoped>
-.qr-builder-container {
-  padding: 2rem;
-  text-align: center;
-  h1 {
-    color: #42b883;
-  }
-}
-</style>

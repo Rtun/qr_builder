@@ -1,0 +1,20 @@
+@use 'sass:math';
+
+// Tamaño de fuente base del navegador (16px por defecto)
+$base-font-size: 16px;
+
+// Función para convertir px a rem
+@function rem($pixels) {
+  // Si el valor ya viene con unidad 'px', se remueve dividiendo por 1px
+  $unitless-pixels: if(math.is-unitless($pixels), $pixels, math.div($pixels, 1px));
+  
+  // Retorna el cálculo en rems
+  @return math.div($unitless-pixels, math.div($base-font-size, 1px)) * 1rem;
+}
+// Colores principales del sistema
+$primary-color: #4f46e5;
+$secondary-color: #4338ca;
+$bg-app: #f8fafc;
+
+// Sobrescribir variables de Bootstrap (opcional)
+$primary: $primary-color;

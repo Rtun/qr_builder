@@ -5,7 +5,11 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: [
+                'resources/css/sass/app.css',
+                'resources/js/app.js',
+                'resources/css/sass/home.scss'
+            ],
             refresh: true,
         }),
         vue({
@@ -17,4 +21,18 @@ export default defineConfig({
             },
         }),
     ],
+    css: {
+        preprocessorOptions: {
+            scss: {
+                api: 'modern-compiler',
+                quietDeps: true,
+                silenceDeprecations: ['color-functions', 'import', 'global-builtin','if-function']
+            }
+        }
+    },
+    resolve: {
+        alias: {
+            'vue': 'vue/dist/vue.esm-bundler.js', // <-- Agrega esta línea
+        },
+    },
 });
